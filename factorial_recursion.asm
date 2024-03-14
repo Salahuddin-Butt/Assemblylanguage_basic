@@ -1,6 +1,3 @@
-;Computer organization and assembly language.
-;Write a program in assembly that displays the factorial of 5 using the recursion method.
-;Following is the program:
 .model small
 org 100h
 .data
