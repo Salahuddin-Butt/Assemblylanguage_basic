@@ -14,7 +14,7 @@ org 100h
       ;  mov ah,3ch
      ;   lea dx,fname
      ;   mov cl,0
-     ;;    int 21h
+     ;   int 21h
       ;  jc if_error
      ;   mov fhandle,ax 
        ;Opening an existing File
@@ -35,29 +35,28 @@ org 100h
         mov ah,09h
         int 21h
     
-        ;Writing text in File 
-       ;  lea dx,msg   
-      ;  mov ah,09h
-      ;  int 21h
-      ;  mov si,0
+       ;Writing text in File 
+    ;   lea dx,msg   
+      ; mov ah,09h
+      ; int 21h
+      ; mov si,0
      ;  mov cx,0
     ;   again:
-     ;   mov ah,01h
-    ;    int 21h
-     ;   cmp al,13
-     ;   je exit
-     ;   mov buffer[si],al
+     ;  mov ah,01h
+    ;   int 21h
+     ;  cmp al,13
+     ;  je exit
+     ;  mov buffer[si],al
     ;   inc si
-     ;   inc cx
-    ;    jmp again 
-    ;    exit:   
-       mov ah,40h
-       mov bx,fhandle
+     ;  inc cx
+    ;   jmp again 
+    ;   exit:   
+        mov ah,40h
+        mov bx,fhandle
         lea dx,buffer
-        ;mov cx
         int 21h
      
-            ;Close a File
+       ;Close a File
         mov ah,3eh
         mov bx,fhandle
         int 21h
@@ -66,10 +65,6 @@ org 100h
        
          mov ah,4ch
          int 21h    
-           if_error:
+         if_error:
          print "File cannot be created:"
          main endp
-  
-        
-        
-        
